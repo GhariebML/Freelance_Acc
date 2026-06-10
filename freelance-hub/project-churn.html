@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction | Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
+    <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+
+    <nav>
+        <div class="logo">MG.AI</div>
+        <div class="nav-links"><a href="index.html" class="btn btn-outline btn-sm">← Back to Hub</a></div>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh; padding-top: 120px;">
+        <div class="container">
+            <h1 style="font-size: clamp(2rem, 5vw, 4rem);">Customer Churn Prediction</h1>
+            <p class="subtitle">Predictive analytics using XGBoost to identify at-risk SaaS subscriptions.</p>
+        </div>
+    </section>
+
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="grid">
+                <div class="glass-card visible">
+                    <h3 class="card-title" style="color: var(--neon-blue);">The Challenge</h3>
+                    <p class="card-desc">High customer acquisition costs made retention a critical business priority. The marketing team needed a way to proactively identify unhappy customers before they canceled their subscription.</p>
+                </div>
+                <div class="glass-card visible">
+                    <h3 class="card-title" style="color: var(--neon-purple);">The Solution</h3>
+                    <p class="card-desc">I conducted advanced Exploratory Data Analysis (EDA) on historical user behavior, performed feature engineering, and built a high-accuracy XGBoost classifier to predict churn probability.</p>
+                </div>
+                <div class="glass-card visible">
+                    <h3 class="card-title" style="color: var(--neon-pink);">The Outcome</h3>
+                    <p class="card-desc">The final model achieved an 85% recall rate. Model explainability (SHAP values) was used to tell stakeholders *why* customers were churning, allowing for targeted retention campaigns.</p>
+                </div>
+            </div>
+
+            <div class="glass-card visible" style="margin-top: 40px; text-align: center;">
+                <h3 class="card-title">Technologies Used</h3>
+                <p class="card-desc">Python | XGBoost | Jupyter Notebook | Seaborn & Matplotlib</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
