@@ -3,85 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & OpenGraph Meta Tags -->
     <meta name="description" content="Mohamed Gharieb - Applied AI Engineer & Data Scientist specializing in Machine Learning, ETL, and Power BI dashboards.">
     <meta property="og:title" content="Mohamed Gharieb | Applied AI & Data Hub">
     <meta property="og:description" content="End-to-end ML systems, dynamic data pipelines, and interactive Power BI dashboards.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mohamed-gharieb-hub.vercel.app/">
+    <title>Mohamed Gharieb | MEGA Applied AI Hub</title>
     
-    <title>Mohamed Gharieb | Applied AI & Data Hub</title>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/main.css">
 
-    <!-- External Libraries -->
+    <!-- External Libraries: Lenis, GSAP, Three.js, Vanta, Chart.js, EmailJS -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Placeholder
-        })();
-    </script>
-    
-    <!-- Google Analytics (Placeholder) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
 </head>
 <body>
 
-    <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Animated Background Orbs -->
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
+    <!-- WebGL Vanta Background -->
+    <div id="vanta-bg"></div>
 
-    <!-- Sticky Navigation -->
     <nav>
         <div class="logo">MG.AI</div>
         <div class="nav-links">
-            <button id="theme-toggle" class="btn-outline" style="border:none; background:transparent; font-size:1.2rem; cursor:pointer;">💡</button>
-            <a href="#freelance-hub">Platforms</a>
-            <a href="#skills-section">Skills</a>
-            <a href="#services">Services</a>
-            <button class="btn btn-outline btn-sm" id="open-modal-btn">Hire Me</button>
+            <button id="theme-toggle" class="btn-outline magnetic-btn" style="border:none; background:transparent; font-size:1.2rem; cursor:pointer;">💡</button>
+            <a href="#freelance-hub" class="magnetic-btn">Platforms</a>
+            <a href="#skills-section" class="magnetic-btn">Skills</a>
+            <button class="btn btn-outline btn-sm magnetic-btn" id="open-modal-btn">Hire Me</button>
         </div>
     </nav>
 
     <!-- Glassmorphic Contact Modal -->
     <div class="modal-overlay" id="contact-modal">
-        <div class="modal-content glass-card">
+        <div class="modal-content">
             <button class="close-modal" id="close-modal-btn">&times;</button>
             <h2>Start a Project</h2>
-            <p style="text-align:center; color: var(--text-secondary); margin-bottom: 20px;">Send me an inquiry to discuss your data architecture or AI needs.</p>
             <form id="contact-form">
-                <input type="text" name="user_name" placeholder="Your Name" required class="form-input">
-                <input type="email" name="user_email" placeholder="Your Email" required class="form-input">
-                <select name="project_type" class="form-input" required>
-                    <option value="" disabled selected>Select Project Type...</option>
-                    <option value="ml">Machine Learning Model</option>
-                    <option value="bi">Power BI Dashboard</option>
-                    <option value="data">Data Engineering / SQL</option>
-                </select>
-                <textarea name="message" placeholder="Tell me about your project data..." rows="4" required class="form-input"></textarea>
+                <input type="text" placeholder="Your Name" required class="form-input">
+                <input type="email" placeholder="Your Email" required class="form-input">
+                <textarea placeholder="Tell me about your project..." rows="4" required class="form-input"></textarea>
                 <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
                 <p id="form-status" style="text-align:center; margin-top:10px; font-weight:600; display:none;"></p>
             </form>
@@ -91,11 +61,53 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>MOHAMED GHARIEB</h1>
-            <p class="subtitle">Applied AI Engineer & Data Scientist. I build end-to-end ML systems, dynamic data pipelines, and interactive Power BI dashboards that drive real business impact.</p>
-            <div class="btn-group">
-                <a href="#freelance-hub" class="btn">Explore My Platforms</a>
-                <a href="#skills-section" class="btn btn-outline">View Core Skills</a>
+            <h1 class="gsap-fade-up">MOHAMED GHARIEB</h1>
+            <p class="subtitle gsap-fade-up">Applied AI Engineer & Data Scientist. I build end-to-end ML systems and data pipelines.</p>
+            <div class="btn-group gsap-fade-up">
+                <a href="#freelance-hub" class="btn magnetic-btn">Explore Freelance Hub</a>
+            </div>
+            
+            <!-- Live GitHub Stats Integration -->
+            <div class="github-badge gsap-fade-up" id="github-stats">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="20" style="filter: invert(1);">
+                Live GitHub Data Loading...
+            </div>
+        </div>
+    </section>
+
+    <!-- BENTO BOX: Freelance Hub -->
+    <section id="freelance-hub">
+        <div class="container">
+            <h2 class="gsap-fade-up">The Freelance Ecosystem</h2>
+            <div class="bento-grid">
+                
+                <!-- Main Priority: Upwork (Spans 2 columns, 2 rows) -->
+                <div class="bento-card span-col-2 span-row-2 gsap-fade-up">
+                    <h3 class="card-title" style="font-size: 2.5rem; color: #14a800;">Upwork</h3>
+                    <p class="card-desc" style="font-size: 1.2rem;">Premium enterprise consulting. I provide end-to-end Data Architecture, Advanced Machine Learning, and executive Business Intelligence dashboards for global clients. Top-Rated performance.</p>
+                    <a href="https://www.upwork.com" target="_blank" class="btn">Hire on Upwork</a>
+                </div>
+
+                <!-- Main Priority: Khamsat (Spans 2 columns) -->
+                <div class="bento-card span-col-2 gsap-fade-up" style="background: rgba(43, 43, 43, 0.4); border-top: 3px solid #00c389;">
+                    <h3 class="card-title">خمسات (Khamsat)</h3>
+                    <p class="card-desc">أقدم خدمات مصغرة احترافية للشركات العربية. تصميم وتطوير لوحات تحكم تفاعلية متقدمة باستخدام Power BI لبيانات عملك.</p>
+                    <a href="https://khamsat.com" target="_blank" class="btn btn-outline" style="align-self: flex-start;">طلب الخدمة</a>
+                </div>
+
+                <!-- Secondary: Mostaql -->
+                <div class="bento-card gsap-fade-up">
+                    <h3 class="card-title">مستقل</h3>
+                    <p class="card-desc">تنفيذ مشاريع الذكاء الاصطناعي وتعلم الآلة للشركات العربية.</p>
+                    <a href="https://mostaql.com" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">تصفح الحساب</a>
+                </div>
+
+                <!-- Secondary: Freelancer -->
+                <div class="bento-card gsap-fade-up">
+                    <h3 class="card-title">Freelancer</h3>
+                    <p class="card-desc">Fast-paced data engineering and predictive models.</p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -103,115 +115,44 @@
     <!-- Interactive Data Visualization (Chart.js) -->
     <section id="skills-section">
         <div class="container">
-            <h2>Technical Stack Radar</h2>
-            <p class="subtitle" style="font-size: 1rem; text-align: center; margin-bottom: 40px;">Interactive Chart.js visualization of my core data science capabilities. Hover to inspect data points.</p>
-            
-            <div style="max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 20px; border-radius: 24px; border: 1px solid var(--card-border); backdrop-filter: var(--glass-blur);">
+            <h2 class="gsap-fade-up">Technical Stack Radar</h2>
+            <div class="radar-container gsap-fade-up">
                 <canvas id="skillsChart"></canvas>
             </div>
-            
         </div>
     </section>
 
     <!-- Featured Case Studies -->
     <section id="case-studies">
         <div class="container">
-            <h2>Featured Data Science Projects</h2>
-            <div class="grid">
+            <h2 class="gsap-fade-up">Featured Case Studies</h2>
+            <div class="bento-grid">
                 
-                <div class="glass-card" style="display: flex; flex-direction: column;">
-                    <h3 class="card-title">Body Performance Intelligence</h3>
-                    <p class="card-desc" style="flex-grow: 1;">Predictive Scikit-Learn models to forecast athlete burnout and performance peaks based on biometric data.</p>
-                    <a href="project-body-performance.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
+                <div class="bento-card gsap-fade-up">
+                    <h3 class="card-title">Body Performance AI</h3>
+                    <p class="card-desc">Predictive Scikit-Learn models forecasting athlete burnout.</p>
+                    <a href="project-body-performance.html" class="btn btn-outline">View Case Study</a>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column;">
-                    <h3 class="card-title">Customer Churn Prediction</h3>
-                    <p class="card-desc" style="flex-grow: 1;">High-accuracy XGBoost classifier to proactively identify at-risk SaaS subscriptions and reduce revenue loss.</p>
-                    <a href="project-churn.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
+                <div class="bento-card gsap-fade-up">
+                    <h3 class="card-title">Churn Prediction</h3>
+                    <p class="card-desc">XGBoost classifier to identify at-risk SaaS subscriptions.</p>
+                    <a href="project-churn.html" class="btn btn-outline">View Case Study</a>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column;">
-                    <h3 class="card-title">Hotel Billing Analytics</h3>
-                    <p class="card-desc" style="flex-grow: 1;">End-to-end SQL Data Engineering and Power BI deployment to automate hospitality revenue reporting.</p>
-                    <a href="project-hotel-billing.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
+                <div class="bento-card span-col-2 gsap-fade-up" style="background: linear-gradient(135deg, rgba(0,240,255,0.1), rgba(138,43,226,0.1));">
+                    <h3 class="card-title">Hotel Billing Analytics Architecture</h3>
+                    <p class="card-desc">End-to-end SQL Data Engineering, ETL orchestration, and executive Power BI deployment to completely automate hospitality revenue reporting and occupancy tracking.</p>
+                    <a href="project-hotel-billing.html" class="btn">Deep Dive</a>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Freelance Hub Grid -->
-    <section id="freelance-hub">
-        <div class="container">
-            <h2>The Freelance Hub</h2>
-            <div class="grid">
-                
-                <div class="glass-card">
-                    <h3 class="card-title">Upwork</h3>
-                    <p class="card-desc">Premium consulting in data architecture, advanced ML models, and business intelligence.</p>
-                    <a href="https://www.upwork.com" target="_blank" class="btn btn-outline">View Profile</a>
-                </div>
-
-                <div class="glass-card">
-                    <h3 class="card-title">مستقل (Mostaql)</h3>
-                    <p class="card-desc">مهندس ذكاء اصطناعي تطبيقي وعالم بيانات. تنفيذ مشاريع تعلم الآلة وتحليل البيانات المتقدمة.</p>
-                    <a href="https://mostaql.com" target="_blank" class="btn btn-outline">تصفح الحساب</a>
-                </div>
-
-                <div class="glass-card">
-                    <h3 class="card-title">خمسات (Khamsat)</h3>
-                    <p class="card-desc">خدمات مصغرة عالية الجودة. سأقوم بتصميم وتطوير لوحات تحكم تفاعلية متقدمة (Power BI).</p>
-                    <a href="https://khamsat.com" target="_blank" class="btn btn-outline">طلب الخدمة</a>
-                </div>
-
-                <div class="glass-card">
-                    <h3 class="card-title">Freelancer.com</h3>
-                    <p class="card-desc">Fast-paced, reliable data engineering pipelines and accurate predictive models delivered efficiently.</p>
-                    <a href="https://www.freelancer.com" target="_blank" class="btn btn-outline">View Profile</a>
-                </div>
-
-                <div class="glass-card">
-                    <h3 class="card-title">PeoplePerHour</h3>
-                    <p class="card-desc">Fixed-price Offers for rapid dashboard creation, EDA, and Python automation scripts.</p>
-                    <a href="https://www.peopleperhour.com" target="_blank" class="btn btn-outline">View Profile</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section id="services">
-        <div class="container">
-            <h2>Core Expertise</h2>
-            
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">All Specialties</button>
-                <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                <button class="filter-btn" data-filter="bi">Data & BI</button>
-            </div>
-
-            <div class="grid" id="services-grid">
-                <div class="glass-card service-card" data-category="ml">
-                    <h3 class="card-title">Machine Learning & AI</h3>
-                    <p class="card-desc">Building robust ML pipelines, deploying deep learning models, engineering NLP systems, and crafting computer vision applications from scratch.</p>
-                </div>
-                <div class="glass-card service-card" data-category="bi">
-                    <h3 class="card-title">Data Architecture</h3>
-                    <p class="card-desc">Designing reliable database schemas, orchestrating complex ETL pipelines, and optimizing massive SQL queries for high-performance scale.</p>
-                </div>
-                <div class="glass-card service-card" data-category="bi">
-                    <h3 class="card-title">Business Intelligence</h3>
-                    <p class="card-desc">Transforming raw data into interactive, evidence-backed Power BI dashboards that allow stakeholders to make strategic, data-driven decisions.</p>
-                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Mohamed Gharieb. Applied AI Engineer & Data Scientist.</p>
+            <p>&copy; 2026 Mohamed Gharieb. Applied AI Engineer.</p>
         </div>
     </footer>
 
