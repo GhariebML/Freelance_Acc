@@ -84,6 +84,21 @@ section { padding: 120px 0; }
 .span-col-3 { grid-column: span 3; }
 .span-row-2 { grid-row: span 2; }
 
+/* Enhanced Brand Cards */
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.brand-logo { height: 40px; width: 40px; object-fit: contain; filter: grayscale(1) opacity(0.6); transition: all 0.4s ease; border-radius: 8px; }
+.brand-card:hover .brand-logo { filter: grayscale(0) opacity(1); transform: scale(1.1); }
+
+.status-badge { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; background: rgba(255,255,255,0.03); padding: 6px 14px; border-radius: 50px; border: 1px solid var(--card-border); color: var(--text-secondary); }
+.pulse-dot { width: 8px; height: 8px; border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.3); } 100% { opacity: 1; transform: scale(1); } }
+
+.brand-card { border-top: 2px solid transparent; transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; }
+.upwork-card:hover { border-top-color: #14a800; box-shadow: 0 10px 40px rgba(20, 168, 0, 0.1); }
+.khamsat-card:hover { border-top-color: #10b981; box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1); }
+.mostaql-card:hover { border-top-color: #3b82f6; box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1); }
+.freelancer-card:hover { border-top-color: #00a2e8; box-shadow: 0 10px 40px rgba(0, 162, 232, 0.1); }
+
 @media (max-width: 1024px) {
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
     .span-col-3 { grid-column: span 2; }
