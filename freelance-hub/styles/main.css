@@ -55,6 +55,11 @@ section { padding: 120px 0; }
 .btn-outline { background: transparent; border: 1px solid var(--card-border); color: var(--text-primary); box-shadow: none; }
 .btn-outline:hover { background: rgba(255, 255, 255, 0.05); border-color: var(--text-primary); }
 
+.btn-glow { position: relative; overflow: hidden; animation: subtle-pulse 3s infinite; }
+@keyframes subtle-pulse { 0% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); } 50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.6); } 100% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); } }
+.btn-glow::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); animation: shine-sweep 4s infinite; }
+@keyframes shine-sweep { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
+
 /* GSAP Elements Starting State */
 .gsap-fade-up { opacity: 0; transform: translateY(40px); }
 
