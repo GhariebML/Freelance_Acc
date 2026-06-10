@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & OpenGraph Meta Tags -->
+    <meta name="description" content="Mohamed Gharieb - Applied AI Engineer & Data Scientist specializing in Machine Learning, ETL, and Power BI dashboards.">
+    <meta property="og:title" content="Mohamed Gharieb | Applied AI & Data Hub">
+    <meta property="og:description" content="End-to-end ML systems, dynamic data pipelines, and interactive Power BI dashboards.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohamed-gharieb-hub.vercel.app/">
+    
     <title>Mohamed Gharieb | Applied AI & Data Hub</title>
     
     <!-- Google Fonts -->
@@ -14,6 +22,24 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/main.css">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Placeholder
+        })();
+    </script>
+    
+    <!-- Google Analytics (Placeholder) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
 
@@ -32,6 +58,7 @@
     <nav>
         <div class="logo">MG.AI</div>
         <div class="nav-links">
+            <button id="theme-toggle" class="btn-outline" style="border:none; background:transparent; font-size:1.2rem; cursor:pointer;">💡</button>
             <a href="#freelance-hub">Platforms</a>
             <a href="#skills-section">Skills</a>
             <a href="#services">Services</a>
@@ -44,18 +71,19 @@
         <div class="modal-content glass-card">
             <button class="close-modal" id="close-modal-btn">&times;</button>
             <h2>Start a Project</h2>
-            <p style="text-align:center; color: var(--text-secondary); margin-bottom: 20px;">Send me an email to discuss your data architecture or AI needs.</p>
+            <p style="text-align:center; color: var(--text-secondary); margin-bottom: 20px;">Send me an inquiry to discuss your data architecture or AI needs.</p>
             <form id="contact-form">
-                <input type="text" placeholder="Your Name" required class="form-input">
-                <input type="email" placeholder="Your Email" required class="form-input">
-                <select class="form-input" required>
+                <input type="text" name="user_name" placeholder="Your Name" required class="form-input">
+                <input type="email" name="user_email" placeholder="Your Email" required class="form-input">
+                <select name="project_type" class="form-input" required>
                     <option value="" disabled selected>Select Project Type...</option>
                     <option value="ml">Machine Learning Model</option>
                     <option value="bi">Power BI Dashboard</option>
                     <option value="data">Data Engineering / SQL</option>
                 </select>
-                <textarea placeholder="Tell me about your project data..." rows="4" required class="form-input"></textarea>
+                <textarea name="message" placeholder="Tell me about your project data..." rows="4" required class="form-input"></textarea>
                 <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+                <p id="form-status" style="text-align:center; margin-top:10px; font-weight:600; display:none;"></p>
             </form>
         </div>
     </div>
@@ -72,43 +100,41 @@
         </div>
     </section>
 
-    <!-- Animated Skills Data Visualization -->
+    <!-- Interactive Data Visualization (Chart.js) -->
     <section id="skills-section">
         <div class="container">
             <h2>Technical Stack Radar</h2>
-            <p class="subtitle" style="font-size: 1rem; text-align: center; margin-bottom: 40px;">Interactive visualization of my core data science capabilities.</p>
-            <div class="skills-grid">
+            <p class="subtitle" style="font-size: 1rem; text-align: center; margin-bottom: 40px;">Interactive Chart.js visualization of my core data science capabilities. Hover to inspect data points.</p>
+            
+            <div style="max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 20px; border-radius: 24px; border: 1px solid var(--card-border); backdrop-filter: var(--glass-blur);">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Featured Case Studies -->
+    <section id="case-studies">
+        <div class="container">
+            <h2>Featured Data Science Projects</h2>
+            <div class="grid">
                 
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Python & Machine Learning (Scikit, PyTorch)</span>
-                        <span class="skill-pct">95%</span>
-                    </div>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
+                <div class="glass-card" style="display: flex; flex-direction: column;">
+                    <h3 class="card-title">Body Performance Intelligence</h3>
+                    <p class="card-desc" style="flex-grow: 1;">Predictive Scikit-Learn models to forecast athlete burnout and performance peaks based on biometric data.</p>
+                    <a href="project-body-performance.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
                 </div>
 
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Advanced SQL & Data Engineering</span>
-                        <span class="skill-pct">90%</span>
-                    </div>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
+                <div class="glass-card" style="display: flex; flex-direction: column;">
+                    <h3 class="card-title">Customer Churn Prediction</h3>
+                    <p class="card-desc" style="flex-grow: 1;">High-accuracy XGBoost classifier to proactively identify at-risk SaaS subscriptions and reduce revenue loss.</p>
+                    <a href="project-churn.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
                 </div>
 
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Power BI & Business Intelligence</span>
-                        <span class="skill-pct">95%</span>
-                    </div>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">NLP & Computer Vision</span>
-                        <span class="skill-pct">80%</span>
-                    </div>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
+                <div class="glass-card" style="display: flex; flex-direction: column;">
+                    <h3 class="card-title">Hotel Billing Analytics</h3>
+                    <p class="card-desc" style="flex-grow: 1;">End-to-end SQL Data Engineering and Power BI deployment to automate hospitality revenue reporting.</p>
+                    <a href="project-hotel-billing.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
                 </div>
 
             </div>
@@ -121,70 +147,34 @@
             <h2>The Freelance Hub</h2>
             <div class="grid">
                 
-                <!-- Upwork Card -->
                 <div class="glass-card">
                     <h3 class="card-title">Upwork</h3>
-                    <p class="card-desc">Premium consulting in data architecture, advanced ML models, and business intelligence. Focusing on top-tier end-to-end delivery.</p>
+                    <p class="card-desc">Premium consulting in data architecture, advanced ML models, and business intelligence.</p>
                     <a href="https://www.upwork.com" target="_blank" class="btn btn-outline">View Profile</a>
                 </div>
 
-                <!-- Mostaql Card -->
                 <div class="glass-card">
                     <h3 class="card-title">مستقل (Mostaql)</h3>
-                    <p class="card-desc">مهندس ذكاء اصطناعي تطبيقي وعالم بيانات. تنفيذ مشاريع تعلم الآلة وتحليل البيانات المتقدمة للشركات في الوطن العربي.</p>
+                    <p class="card-desc">مهندس ذكاء اصطناعي تطبيقي وعالم بيانات. تنفيذ مشاريع تعلم الآلة وتحليل البيانات المتقدمة.</p>
                     <a href="https://mostaql.com" target="_blank" class="btn btn-outline">تصفح الحساب</a>
                 </div>
 
-                <!-- Khamsat Card -->
                 <div class="glass-card">
                     <h3 class="card-title">خمسات (Khamsat)</h3>
-                    <p class="card-desc">خدمات مصغرة عالية الجودة. سأقوم بتصميم وتطوير لوحات تحكم تفاعلية متقدمة (Power BI) لبيانات عملك.</p>
+                    <p class="card-desc">خدمات مصغرة عالية الجودة. سأقوم بتصميم وتطوير لوحات تحكم تفاعلية متقدمة (Power BI).</p>
                     <a href="https://khamsat.com" target="_blank" class="btn btn-outline">طلب الخدمة</a>
                 </div>
 
-                <!-- Freelancer.com Card -->
                 <div class="glass-card">
                     <h3 class="card-title">Freelancer.com</h3>
-                    <p class="card-desc">Fast-paced, reliable data engineering pipelines and accurate predictive models delivered efficiently for global enterprise clients.</p>
+                    <p class="card-desc">Fast-paced, reliable data engineering pipelines and accurate predictive models delivered efficiently.</p>
                     <a href="https://www.freelancer.com" target="_blank" class="btn btn-outline">View Profile</a>
                 </div>
 
-                <!-- PeoplePerHour Card -->
                 <div class="glass-card">
                     <h3 class="card-title">PeoplePerHour</h3>
-                    <p class="card-desc">Fixed-price Offers for specific data tasks, including rapid dashboard creation, exploratory data analysis, and Python automation scripts.</p>
+                    <p class="card-desc">Fixed-price Offers for rapid dashboard creation, EDA, and Python automation scripts.</p>
                     <a href="https://www.peopleperhour.com" target="_blank" class="btn btn-outline">View Profile</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Case Studies -->
-    <section id="case-studies">
-        <div class="container">
-            <h2>Featured Data Science Projects</h2>
-            <div class="grid">
-                
-                <!-- Body Performance -->
-                <div class="glass-card" style="display: flex; flex-direction: column;">
-                    <h3 class="card-title">Body Performance Intelligence</h3>
-                    <p class="card-desc" style="flex-grow: 1;">Predictive Scikit-Learn models to forecast athlete burnout and performance peaks based on biometric data.</p>
-                    <a href="project-body-performance.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
-                </div>
-
-                <!-- Churn Prediction -->
-                <div class="glass-card" style="display: flex; flex-direction: column;">
-                    <h3 class="card-title">Customer Churn Prediction</h3>
-                    <p class="card-desc" style="flex-grow: 1;">High-accuracy XGBoost classifier to proactively identify at-risk SaaS subscriptions and reduce revenue loss.</p>
-                    <a href="project-churn.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
-                </div>
-
-                <!-- Hotel Billing -->
-                <div class="glass-card" style="display: flex; flex-direction: column;">
-                    <h3 class="card-title">Hotel Billing Analytics</h3>
-                    <p class="card-desc" style="flex-grow: 1;">End-to-end SQL Data Engineering and Power BI deployment to automate hospitality revenue reporting.</p>
-                    <a href="project-hotel-billing.html" class="btn btn-outline" style="margin-top: auto; text-align: center;">View Case Study</a>
                 </div>
 
             </div>
@@ -196,11 +186,10 @@
         <div class="container">
             <h2>Core Expertise</h2>
             
-            <!-- JavaScript Filtering Tabs -->
             <div class="filter-tabs">
                 <button class="filter-btn active" data-filter="all">All Specialties</button>
                 <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                <button class="filter-btn" data-filter="bi">Business Intelligence</button>
+                <button class="filter-btn" data-filter="bi">Data & BI</button>
             </div>
 
             <div class="grid" id="services-grid">
@@ -226,7 +215,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
 </html>
