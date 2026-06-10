@@ -150,4 +150,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if(target) lenis.scrollTo(target);
         });
     });
+
+    // 10. Swiper Testimonials Slider
+    if (document.querySelector('.mySwiper')) {
+        new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            grabCursor: true,
+            spaceBetween: 30,
+        });
+    }
 });

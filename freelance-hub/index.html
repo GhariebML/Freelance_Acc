@@ -7,16 +7,21 @@
     <meta property="og:title" content="Mohamed Gharieb | Applied AI & Data Hub">
     <meta property="og:description" content="End-to-end ML systems, dynamic data pipelines, and interactive Power BI dashboards.">
     <meta property="og:type" content="website">
-    <title>Mohamed Gharieb | MEGA Applied AI Hub</title>
+    <title>Mohamed Gharieb | Elite Applied AI Hub</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- Local CSS -->
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/main.css">
 
-    <!-- External Libraries: Lenis, GSAP, Three.js, Vanta, Chart.js, EmailJS -->
+    <!-- External Libraries: Lenis, GSAP, Three.js, Vanta, Chart.js, EmailJS, Swiper -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -24,6 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -38,7 +44,9 @@
         <div class="nav-links">
             <button id="theme-toggle" class="btn-outline magnetic-btn" style="border:none; background:transparent; font-size:1.2rem; cursor:pointer;">💡</button>
             <a href="#freelance-hub" class="magnetic-btn">Platforms</a>
-            <a href="#skills-section" class="magnetic-btn">Skills</a>
+            <a href="#experience" class="magnetic-btn">Experience</a>
+            <!-- Resume Download Link -->
+            <a href="resume.pdf" download class="btn-outline magnetic-btn" style="padding: 6px 12px; border-radius: 4px; font-size: 0.8rem;">📥 CV</a>
             <button class="btn btn-outline btn-sm magnetic-btn" id="open-modal-btn">Hire Me</button>
         </div>
     </nav>
@@ -62,15 +70,53 @@
     <section class="hero">
         <div class="container">
             <h1 class="gsap-fade-up">MOHAMED GHARIEB</h1>
-            <p class="subtitle gsap-fade-up">Applied AI Engineer & Data Scientist. I build end-to-end ML systems and data pipelines.</p>
+            <p class="subtitle gsap-fade-up">Applied AI Engineer & Data Scientist. I build end-to-end ML systems and highly scalable data pipelines.</p>
             <div class="btn-group gsap-fade-up">
                 <a href="#freelance-hub" class="btn magnetic-btn">Explore Freelance Hub</a>
+                <a href="resume.pdf" download class="btn btn-outline magnetic-btn">Download Full CV</a>
             </div>
             
             <!-- Live GitHub Stats Integration -->
             <div class="github-badge gsap-fade-up" id="github-stats">
                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="20" style="filter: invert(1);">
                 Live GitHub Data Loading...
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Timeline -->
+    <section id="experience" style="background: rgba(0,0,0,0.2); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+        <div class="container">
+            <h2 class="gsap-fade-up" style="font-weight: 300; letter-spacing: -1px;">Professional Journey</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item gsap-fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3 class="card-title" style="font-size: 1.5rem;">Senior Freelance Data Scientist</h3>
+                        <p class="card-desc" style="margin-bottom:0;">Top-Rated on Upwork & Khamsat. Delivering end-to-end Machine Learning models, Power BI executive dashboards, and complex ETL pipelines for international enterprise clients.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item gsap-fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3 class="card-title" style="font-size: 1.5rem;">Applied AI Engineer</h3>
+                        <p class="card-desc" style="margin-bottom:0;">Developed robust NLP systems and deployed predictive Scikit-Learn models to production environments, dramatically improving operational efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item gsap-fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content bento-card">
+                        <span class="timeline-date">2017 - 2021</span>
+                        <h3 class="card-title" style="font-size: 1.5rem;">Computer Science & AI Studies</h3>
+                        <p class="card-desc" style="margin-bottom:0;">Graduated with honors, specializing in Algorithms, Big Data Architecture, and Deep Learning neural networks.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -113,10 +159,53 @@
         </div>
     </section>
 
+    <!-- Client Testimonials Slider -->
+    <section id="testimonials" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="gsap-fade-up" style="font-weight: 300; letter-spacing: -1px;">Client Feedback</h2>
+            
+            <div class="swiper mySwiper gsap-fade-up">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <div class="bento-card" style="text-align: center; max-width: 800px; margin: 0 auto; border-top: 2px solid var(--neon-blue);">
+                            <p style="font-size: 3rem; color: var(--neon-blue); line-height: 0.5; margin-top: 20px;">"</p>
+                            <p class="card-desc" style="font-size: 1.2rem; font-style: italic;">Mohamed delivered an exceptional Machine Learning model for our SaaS product. His code was incredibly clean, well-documented, and highly accurate. We will definitely hire him again.</p>
+                            <h4 style="color: var(--text-primary); font-weight: 600;">David R.</h4>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Tech Lead, Upwork Client</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bento-card" style="text-align: center; max-width: 800px; margin: 0 auto; border-top: 2px solid var(--neon-pink);">
+                            <p style="font-size: 3rem; color: var(--neon-pink); line-height: 0.5; margin-top: 20px;">"</p>
+                            <p class="card-desc" style="font-size: 1.2rem; font-style: italic;">عمل احترافي جداً وفي وقت قياسي. لوحة تحكم Power BI التي صممها محمد غيّرت طريقتنا في تحليل المبيعات بالكامل. أنصح بالتعامل معه بشدة.</p>
+                            <h4 style="color: var(--text-primary); font-weight: 600;">Ahmed M.</h4>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">CEO, Khamsat Client</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bento-card" style="text-align: center; max-width: 800px; margin: 0 auto; border-top: 2px solid var(--neon-purple);">
+                            <p style="font-size: 3rem; color: var(--neon-purple); line-height: 0.5; margin-top: 20px;">"</p>
+                            <p class="card-desc" style="font-size: 1.2rem; font-style: italic;">We needed a complex SQL pipeline completely overhauled. Mohamed not only optimized our queries by 400% but also set up an automated ETL workflow. True data wizard.</p>
+                            <h4 style="color: var(--text-primary); font-weight: 600;">Sarah J.</h4>
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">Data Director, Freelancer</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Interactive Data Visualization (Chart.js) -->
     <section id="skills-section">
         <div class="container">
-            <h2 class="gsap-fade-up">Technical Stack Radar</h2>
+            <h2 class="gsap-fade-up" style="font-weight: 300; letter-spacing: -1px;">Technical Stack Radar</h2>
             <div class="radar-container gsap-fade-up">
                 <canvas id="skillsChart"></canvas>
             </div>
@@ -126,7 +215,7 @@
     <!-- Featured Case Studies -->
     <section id="case-studies">
         <div class="container">
-            <h2 class="gsap-fade-up">Featured Case Studies</h2>
+            <h2 class="gsap-fade-up" style="font-weight: 300; letter-spacing: -1px;">Featured Case Studies</h2>
             <div class="bento-grid">
                 
                 <div class="bento-card gsap-fade-up">
