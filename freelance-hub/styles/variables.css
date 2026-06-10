@@ -1,18 +1,18 @@
 :root {
-    /* Premium Dark Theme (Default) */
-    --bg-base: #050505;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-highlight: rgba(255, 255, 255, 0.15);
+    /* Ultra-Premium Deep Tech Theme */
+    --bg-base: #02040A; /* Extremely deep, almost black blue */
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --card-border: rgba(255, 255, 255, 0.05); /* Softer, elegant borders */
+    --card-highlight: rgba(255, 255, 255, 0.05);
     
-    /* Vibrant Neon Accents */
-    --neon-blue: #00f0ff;
-    --neon-purple: #8a2be2;
-    --neon-pink: #ff0055;
+    /* Sophisticated Accents */
+    --neon-blue: #3b82f6; /* Professional trust blue */
+    --neon-purple: #4f46e5; /* Deep corporate indigo */
+    --neon-pink: #10b981; /* Emerald green (Success/Data) */
     
     /* Text */
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
+    --text-primary: #f8fafc;
+    --text-secondary: #8b9bb4;
     
     /* Typography */
     --font-main: 'Inter', sans-serif;
@@ -21,25 +21,24 @@
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 4rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 6rem; /* Massive breathing room for luxury feel */
     
     /* Effects */
-    --glass-blur: blur(20px);
-    --transition-smooth: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --glass-blur: blur(24px); /* Heavy, realistic frosted glass */
+    --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Elite Apple-style easing */
 }
 
 /* Light Theme Overrides */
 html[data-theme="light"] {
-    --bg-base: #f4f7fb;
-    --card-bg: rgba(255, 255, 255, 0.6);
-    --card-border: rgba(0, 0, 0, 0.1);
-    --card-highlight: rgba(255, 255, 255, 0.8);
+    --bg-base: #fafcff;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(0, 0, 0, 0.06);
+    --card-highlight: rgba(255, 255, 255, 0.9);
     
-    /* Deeper Accents for readability */
     --neon-blue: #2563eb;
-    --neon-purple: #7c3aed;
-    --neon-pink: #db2777;
+    --neon-purple: #4338ca;
+    --neon-pink: #059669;
     
     --text-primary: #0f172a;
     --text-secondary: #475569;
