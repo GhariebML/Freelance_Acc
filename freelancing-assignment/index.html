@@ -118,33 +118,66 @@
         ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #8b949e; }
 
-        /* Print Styles - Perfect A4 Output */
+        /* Print Styles - Ultra Premium PDF Output */
         @media print {
-            @page { margin: 15mm; size: A4 portrait; }
-            body, .ambient-bg { background: #ffffff !important; color: #111827 !important; font-size: 10pt; }
-            .ambient-bg { display: none; }
-            .no-print { display: none !important; }
+            @page { margin: 12mm; size: A4 portrait; }
+            :root {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            body { 
+                background: #f8fafc !important; 
+                color: #0f172a !important; 
+                font-size: 10pt; 
+            }
+            .ambient-bg, .no-print { display: none !important; }
+            
+            /* High-End Document Styling */
             .premium-card {
                 background: #ffffff !important;
-                border: 1px solid #e5e7eb !important;
-                box-shadow: none !important;
-                backdrop-filter: none !important;
-                color: #111827 !important;
+                border: 1px solid #e2e8f0 !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
                 page-break-inside: avoid;
-                margin-bottom: 24px;
-                border-radius: 12px;
+                margin-bottom: 20px;
+                border-radius: 12px !important;
             }
-            .text-gradient, .text-gradient-accent {
-                background: none !important;
-                -webkit-text-fill-color: #1d4ed8 !important;
-                color: #1d4ed8 !important;
+            
+            /* Typography & Colors for Light Background */
+            h1, h2, h3, h4 { color: #0f172a !important; }
+            p, span, li { color: #334155 !important; }
+            .text-gray-400, .text-gray-300, .text-gray-500 { color: #475569 !important; }
+            
+            /* Force retain white text on specific gradient elements */
+            .bg-gradient-to-br, .bg-gradient-to-br * { color: #ffffff !important; }
+            
+            /* Dark Mode Overrides */
+            .bg-dark-900, .bg-dark-800, .bg-dark-700 { background: #ffffff !important; }
+            .bg-white\/5 { background: #f1f5f9 !important; border-color: #e2e8f0 !important; }
+            
+            /* Gradient Text Translation to Light Mode */
+            .text-gradient {
+                background: linear-gradient(135deg, #1e40af 0%, #6b21a8 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
             }
-            h1, h2, h3, h4, p, span, li, a { color: #111827 !important; font-family: 'Inter', sans-serif !important; }
-            .text-gray-400 { color: #4b5563 !important; }
-            .bg-dark-800, .bg-dark-700 { background: #f3f4f6 !important; }
+            .text-gradient-accent {
+                background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+            }
+
+            /* FORCE PERFECT ALIGNMENT FOR PDF (Override tailwind collapse) */
+            .lg\:grid-cols-2, .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+            .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+            .xl\:flex-row { flex-direction: row !important; }
+            .xl\:items-center { align-items: center !important; }
+            
+            /* Layout & Media adjustments */
             .print-break { page-break-before: always; }
             a { text-decoration: none !important; }
-            img { max-width: 100% !important; height: auto !important; border: 1px solid #e5e7eb; }
+            img { max-height: 400px !important; object-fit: contain !important; border: 1px solid #e2e8f0; border-radius: 8px; }
             .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
         }
     </style>
