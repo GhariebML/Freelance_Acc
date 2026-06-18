@@ -8,7 +8,7 @@ This 3-day roadmap ensures all deliverables are executed systematically to achie
 **Dependencies:** None
 **Tasks:**
 1. Finalize the `brand_package.md` and select the primary headshot photo.
-2. Register accounts on Khamsat, Mostaql, Freelancer, Upwork, and PeoplePerHour.
+2. Register accounts on Khamsat, Mostaql, Freelancer, Upwork, and Nafezly.
 3. Complete all profile settings (Headline, Bio, Skills) using the content from `profiles.md`.
 4. Initiate identity and phone verifications on platforms that require it.
 **Deliverables:** 5 completed and optimized profile shells ready for portfolio uploads.
@@ -18,10 +18,10 @@ This 3-day roadmap ensures all deliverables are executed systematically to achie
 **Estimated Time:** 4 Hours
 **Dependencies:** Day 1 completion
 **Tasks:**
-1. Gather the necessary screenshots for AutoAnalyst AI, ADPilot, and AI Automation Platform.
-2. Upload the 3 projects to the portfolio sections of Upwork, Freelancer, Mostaql, and PeoplePerHour using descriptions from `portfolio_system.md`.
+1. Gather the necessary screenshots for the Body Performance System, Churn Prediction, and Hotel Billing System.
+2. Upload the 3 projects to the portfolio sections of Upwork, Freelancer, Mostaql, and Nafezly using descriptions from `portfolio_system.md`.
 3. Design a thumbnail image for the Khamsat service.
-4. Publish the "Custom AI Chatbot Integration" service on Khamsat using the copy from `khamsat_services.md`.
+4. Publish the "Power BI Dashboards" (or AI Chatbot Integration) service on Khamsat using the copy from `khamsat_services.md`.
 **Deliverables:** fully populated portfolios across all platforms and 1 published service under review on Khamsat.
 
 ## Day 3: Screenshot Collection & Final PDF Assembly
